@@ -5,8 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "test": "NODE_ENV=test jest",
-    "start": "npx babel-node ./src/www.js",
-    "build:dev": "webpack --env=dev"
+    "start": "npx babel-node ./src/www.js ",
+    "build:dev": "webpack --env development",
+    "start:dev": "npm run build:dev && node ./build/js/bundle.js",
+    "build:prd": "webpack --env production",
+    "start:prd": "npm run build:prd && node ./build/js/bundle.js"
   },
   "author": "FlowerGeoji",
   "license": "ISC",
