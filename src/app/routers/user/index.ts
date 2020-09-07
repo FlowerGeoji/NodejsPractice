@@ -7,10 +7,10 @@ router.get('/', Controller.readUsers);
 
 router.get('/:id', Controller.readUser)
 
-router.post('/', Controller.createUser)
+// router.post('/', Controller.createUser)
 
-router.put('/:id', Controller.updateUser)
+// router.put('/:id', Controller.updateUser)
 
-router.delete('/:id', Controller.deleteUser)
+// router.delete('/:id', Controller.deleteUser)
 
 export default router

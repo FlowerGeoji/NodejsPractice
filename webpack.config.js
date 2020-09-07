@@ -9,24 +9,24 @@ module.exports = (env) => {
     mode: env,
     target: 'node',
   
-    entry: ['babel-polyfill', './src/www.js'],
+    entry: './src/www.ts',
     output: {
-      filename: 'js/bundle.js',
+      filename: 'bundle.js',
       path: path.resolve(__dirname, 'build'),
       publicPath: '/',
       globalObject: `(typeof self !== 'undefined' ? self : this)`,
     },
+
+    resolve: {
+      extensions: ['.tsx', '.ts', '.js']
+    },
+
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.(ts)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
-        },
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: ['babel-loader', 'eslint-loader'],
+          use: 'ts-loader',
         }
       ],
     },
