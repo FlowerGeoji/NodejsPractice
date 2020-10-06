@@ -1,10 +1,10 @@
-const path = require('path');
-const webpack = require('webpack');
-const Dotenv = require('dotenv-webpack');
+var path = require('path');
+var webpack = require('webpack');
+var Dotenv = require('dotenv-webpack');
 
-// const srcDir = path.resolve(__dirname, 'src');
+// var srcDir = path.resolve(__dirname, 'src');
 
-module.exports = (env) => {
+module.exports = function(env) {
   return {
     mode: env,
     target: 'node',
@@ -38,5 +38,5 @@ module.exports = (env) => {
         path: './.env',
       })
     ],
-  }
-}
+  };
+};

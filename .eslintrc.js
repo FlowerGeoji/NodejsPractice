@@ -4,11 +4,20 @@ module.exports = {
         "node": true,
         "jest": true,
     },
-    "extends": "eslint:recommended",
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
+    ],
+    "plugins": [
+        "@typescript-eslint"
+    ],
+
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 11,
+        "ecmaVersion": 2020,
         "sourceType": "module"
     },
+
     "rules": {
         "no-unused-vars": ["warn"]
     }
